@@ -1,8 +1,5 @@
 'use strict';
 
-const mergeTrees = require('broccoli-merge-trees');
-const BroccoliWorkbox = require('./lib/broccoli-workbox');
-
 module.exports = {
   name: require('./package').name,
 
@@ -64,6 +61,8 @@ module.exports = {
       return tree;
     }
 
+    const mergeTrees = require('broccoli-merge-trees');
+    const BroccoliWorkbox = require('./lib/broccoli-workbox');
     const workboxFunnel = new BroccoliWorkbox([tree], {
       options: this._options,
       workboxOptions: this.workboxOptions,
